@@ -9,8 +9,8 @@
     "semantic-ui-css": "^1.10.2"
   },
   "scripts": {
-    "watch": "node_modules/.bin/webpack -d --watch",
-    "build": "node_modules/.bin/webpack -p"
+    "watch": "node_modules/.bin/webpack -d --progress --display-chunks --display-reasons --display-error-details --watch",
+    "build": "node_modules/.bin/webpack -p --progress --display-chunks --display-reasons --display-error-details"
   },
   "engines": {
     "node": ">=0.10.0"
