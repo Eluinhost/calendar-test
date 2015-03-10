@@ -25,7 +25,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'jsx-loader?harmony'
+        loader: 'babel-loader?optional=react'
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
