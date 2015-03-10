@@ -1,3 +1,3 @@
 require('semantic-ui-css/semantic.min.css');
-require('react');
-require('reflux');
+require('./stores/MatchPostStore');
+require('./MatchPostFactory');
