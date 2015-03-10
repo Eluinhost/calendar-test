@@ -1,6 +1,6 @@
 'use strict';
 
-var MatchPostFactory = require('../MatchPostFactory');
+var MatchPostFactory = require('./MatchPostFactory');
 
 var posts = Immutable.Set();
 
