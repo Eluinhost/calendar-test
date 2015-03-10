@@ -16,8 +16,6 @@
     "node": ">=0.10.0"
   },
   "devDependencies": {
-    "babel-core": "^4.7.3",
-    "babel-loader": "^4.1.0",
     "css-loader": "^0.9.1",
     "extract-text-webpack-plugin": "^0.3.8",
     "file-loader": "^0.8.1",
