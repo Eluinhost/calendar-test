@@ -1,10 +1,11 @@
 'use strict';
-require('semantic-ui-css/semantic.min.css');
 
-var React = require('react/addons');
-var Immutable = require('immutable');
-var _ = require('lodash');
-var MatchPostListing = require('./components/MatchPostListing');
+import 'semantic-ui-css/semantic.min.css';
+
+import React from 'react/addons';
+import Immutable from 'immutable';
+import _ from 'lodash';
+import MatchPostListing from './components/MatchPostListing';
 
 var data = Immutable.List(_.range(100));
 
@@ -14,4 +15,5 @@ React.render(
       <MatchPostListing data={data} />
     </div>
   </div>
-  , document.getElementById('page'));
+  , document.getElementById('page')
+);

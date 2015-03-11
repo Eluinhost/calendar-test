@@ -1,7 +1,7 @@
 'use strict';
 
-var React = require('react/addons');
-var _ = require('lodash');
+import React from 'react/addons';
+import _ from 'lodash';
 
 class MatchPostItem extends React.Component {
   constructor(props) {
