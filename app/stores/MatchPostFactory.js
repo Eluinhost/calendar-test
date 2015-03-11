@@ -1,14 +1,21 @@
 'use strict';
 
-var Immutable = require('immutable');
-var moment = require('moment');
+import Immutable from 'immutable';
+import moment from 'moment';
 
 const POST_TITLE_REGEX = /^(\w+ \d+ \d+:\d+)\s*(?:UTC|UCT)?\s*\[?(\w*)\]?[ -]+(.*)$/i;
 const IP_V4_REGEX = /(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(\:\d{1,5})?/g;
 
 class MatchPostFactory {
-  static fromRedditPost(raw, pivotTime) {
-    var linkData = null;/* TODO MarkdownLinkDataService.fetch('/matchpost', element.selftext); */
+  /**
+   * @param {MarkdownDataLinkParser} dataLinkParser
+   */
+  constructor(dataLinkParser) {
+    this._dataLinkParser = dataLinkParser;
+  }
+
+  fromRedditPost(raw, pivotTime) {
+    var data = this._dataLinkParser.parse(raw.selftext);
 
     var matchPost = {
       id: raw.id,
@@ -19,9 +26,9 @@ class MatchPostFactory {
       posted: moment(element.created_utc, 'X')
     };
 
-    if (linkData) {
-      // no more parsing required, just assign the values from the link data
-      _.assign(matchPost, linkData);
+    if (data.length) {
+      // no more parsing required, just assign the values from the first data link found
+      _.assign(matchPost, data[0]);
     } else {
       // we fallback to parsing from the post itself
 
