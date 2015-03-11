@@ -28,7 +28,7 @@ class MatchPostFactory {
 
     if (data.length) {
       // no more parsing required, just assign the values from the first data link found
-      _.assign(matchPost, data[0]);
+      _.assign(matchPost, _.pick(data[0], ['title', 'starts', 'opens', 'address']));
     } else {
       // we fallback to parsing from the post itself
 
