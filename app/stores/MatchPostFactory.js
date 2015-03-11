@@ -2,6 +2,7 @@
 
 import Immutable from 'immutable';
 import moment from 'moment';
+import he from 'he';
 
 const POST_TITLE_REGEX = /^(\w+ \d+ \d+:\d+)\s*(?:UTC|UCT)?\s*\[?(\w*)\]?[ -]+(.*)$/i;
 const IP_V4_REGEX = /(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(\:\d{1,5})?/g;
@@ -23,7 +24,7 @@ class MatchPostFactory {
       content: raw.selftext,
       author: raw.author,
       permalink: raw.permalink,
-      posted: moment(element.created_utc, 'X')
+      posted: moment(raw.created_utc, 'X')
     };
 
     if (data.length) {
