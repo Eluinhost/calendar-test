@@ -23,7 +23,7 @@ class MatchPostFactory {
       title: raw.title,
       content: raw.selftext,
       author: raw.author,
-      permalink: raw.permalink,
+      permalink: 'https://reddit.com/' + raw.permalink,
       posted: moment(raw.created_utc, 'X')
     };
 
