@@ -37,6 +37,6 @@ var MatchPostStore = {
 
 
 setInterval(MatchPostStore.refetch.bind(MatchPostStore), 60000);
-//MatchPostStore.refetch();
+MatchPostStore.refetch();
 
 module.exports = MatchPostStore;
