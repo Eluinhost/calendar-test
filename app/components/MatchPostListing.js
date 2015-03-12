@@ -16,7 +16,11 @@ class MatchPostItem extends React.Component {
     return (
       <div className={'ui card ' + this.state.color}>
         <div className="content">
-          <div className="center aligned header">{this.props.data.get('title')}</div>
+          <div className="center aligned header">
+            <a href={this.props.data.get('permalink')} target="_blank">
+              {this.props.data.get('title')}
+            </a>
+          </div>
         </div>
         <div className="extra content">
           <div className="left floated header">
