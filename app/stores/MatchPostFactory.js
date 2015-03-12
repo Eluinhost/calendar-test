@@ -28,6 +28,9 @@ class MatchPostFactory {
     };
 
     if (data.length) {
+      data[0].starts = moment.utc(data[0].starts);
+      data[0].opens = moment.utc(data[0].opens);
+
       // no more parsing required, just assign the values from the first data link found
       _.assign(matchPost, _.pick(data[0], ['title', 'starts', 'opens', 'address']));
     } else {
