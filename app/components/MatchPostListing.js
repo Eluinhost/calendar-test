@@ -14,6 +14,15 @@ class MatchPostItem extends React.Component {
     }
   }
   render() {
+    var starts = this.props.data.get('starts');
+    var start1, start2;
+    if (starts) {
+      start1 = starts.format('MMM DD');
+      start2 = starts.format('HH:mm');
+    } else {
+      start1 = 'Unknown';
+    }
+
     return (
       <div className={'ui card ' + this.state.color}>
         <div className="content">
@@ -25,7 +34,9 @@ class MatchPostItem extends React.Component {
         </div>
         <div className="extra content">
           <div className="left floated header">
-            Mar 10 - 21:30
+            {start1}
+            <br />
+            {start2}
           </div>
           <div className="right floated">
             <i className="ui clock icon" />
