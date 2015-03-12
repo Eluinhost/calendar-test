@@ -3,6 +3,7 @@
 import React from 'react/addons';
 import _ from 'lodash';
 import {MatchPostStore} from '../stores';
+import {RelativeTime} from '.';
 
 class MatchPostItem extends React.Component {
   constructor(props) {
@@ -27,9 +28,11 @@ class MatchPostItem extends React.Component {
             Mar 10 - 21:30
           </div>
           <div className="right floated">
-            <i className="ui clock icon" /> 2 hours
+            <i className="ui clock icon" />
+            <RelativeTime time={this.props.data.get('opens')} refresh="10000" />
             <br />
-            <i className="ui toggle right icon" /> 3 hours
+            <i className="ui toggle right icon" />
+            <RelativeTime time={this.props.data.get('starts')} />
           </div>
         </div>
         <div className="extra content">
@@ -42,11 +45,6 @@ class MatchPostItem extends React.Component {
         </div>
 
         <div className="extra content">
-          <div className="left floated">
-              <i className="ui clock icon" /> 2 hours
-              <br />
-              <i className="ui toggle right icon" /> 3 hours
-          </div>
           <div className="right floated">
             {this.props.data.get('author')} <i className="ui user icon" />
           </div>
