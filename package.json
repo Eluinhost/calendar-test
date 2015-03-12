@@ -6,10 +6,11 @@
     "flux": "^2.0.1",
     "he": "^0.5.0",
     "immutable": "^3.6.4",
+    "intl": "^0.1.4",
+    "intl-relativeformat": "^1.0.3",
     "lodash": "^3.3.1",
     "moment": "^2.9.0",
     "react": "^0.13.0",
-    "react-intl": "^1.1.0",
     "semantic-ui-css": "^1.10.2",
     "superagent": "^0.21.0"
   },
