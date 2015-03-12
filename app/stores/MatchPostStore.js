@@ -3,6 +3,7 @@
 import MatchPostFactory from './MatchPostFactory';
 import {MarkdownDataLinkParser} from '../parsers';
 import request from 'superagent';
+import moment from 'moment';
 
 var MatchPostGenerator = new MatchPostFactory(
   new MarkdownDataLinkParser('/matchpost'),
@@ -16,6 +17,15 @@ var MatchPostStore = {
         .map((item) => item.data)
         .map(MatchPostGenerator.fromRedditPost, MatchPostGenerator)
         .without(null)
+        .filter((item) => {
+          // allow unparsed times
+          if (!item.get('starts')) return true;
+
+          // filter out past games
+          return item.get('starts').diff(moment.utc()) > 0
+        })
+        // sort by start time and move unparsed to the end of the list
+        .sortBy((item) => item.get('starts') ? item.get('starts') : Infinity)
         .indexBy((item) => item.get('id'))
         .value();
 
