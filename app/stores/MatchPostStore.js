@@ -4,7 +4,10 @@ import MatchPostFactory from './MatchPostFactory';
 import {MarkdownDataLinkParser} from '../parsers';
 import request from 'superagent';
 
-var MatchPostGenerator = new MatchPostFactory(new MarkdownDataLinkParser('/matchpost'));
+var MatchPostGenerator = new MatchPostFactory(
+  new MarkdownDataLinkParser('/matchpost'),
+  ['EU', 'NA', 'AF', 'AN', 'AS', 'OC', 'SA' /* others */, 'US', 'CA', 'AU']
+);
 
 var MatchPostStore = {
   init: function(raw) {
