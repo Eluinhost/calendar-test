@@ -1,6 +1,7 @@
 'use strict';
 
 jest.dontMock('../shallowEqual');
+jest.dontMock('lodash');
 
 describe('shallow equal', function() {
 
