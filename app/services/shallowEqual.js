@@ -7,7 +7,7 @@ module.exports = function(a, b) {
   if (a === b) return true;
 
   // make sure they're actually objects
-  if (!_.isObject(a) || !_.isObject(b)) return false;
+  if (!_.isPlainObject(a) || !_.isPlainObject(b)) return false;
 
   // grab the keys from each object
   var keysA = _.keys(a);
