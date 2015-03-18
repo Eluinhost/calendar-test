@@ -17,7 +17,7 @@
   "scripts": {
     "watch": "webpack -d --progress --display-chunks --display-reasons --display-error-details --watch",
     "build": "webpack -p --progress --display-chunks --display-reasons --display-error-details",
-    "test": "jest",
+    "test": "npm run-script jscs && jest",
     "jscs": "jscs --esprima=esprima-fb --preset=airbnb ./app"
   },
   "engines": {
