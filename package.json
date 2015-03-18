@@ -15,8 +15,9 @@
     "superagent": "^0.21.0"
   },
   "scripts": {
-    "watch": "node_modules/.bin/webpack -d --progress --display-chunks --display-reasons --display-error-details --watch",
-    "build": "node_modules/.bin/webpack -p --progress --display-chunks --display-reasons --display-error-details"
+    "watch": "webpack -d --progress --display-chunks --display-reasons --display-error-details --watch",
+    "build": "webpack -p --progress --display-chunks --display-reasons --display-error-details",
+    "test": "jest"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -27,6 +28,7 @@
     "css-loader": "^0.9.1",
     "extract-text-webpack-plugin": "^0.3.8",
     "file-loader": "^0.8.1",
+    "jest-cli": "^0.4.0",
     "jsx-loader": "^0.12.2",
     "style-loader": "^0.8.3",
     "url-loader": "^0.5.5",
@@ -34,6 +36,8 @@
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/test-preprocessor.js",
-    "unmockedModulePathPatterns": ["<rootDir>/node_modules/react"]
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ]
   }
 }
