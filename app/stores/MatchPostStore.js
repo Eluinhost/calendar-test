@@ -7,7 +7,7 @@ import moment from 'moment';
 
 var MatchPostGenerator = new MatchPostFactory(
   new MarkdownDataLinkParser('/matchpost'),
-  ['EU', 'NA', 'AF', 'AN', 'AS', 'OC', 'SA' /* others */, 'US', 'CA', 'AU']
+  ['EU', 'NA', 'AF', 'AN', 'AS', 'OC', 'SA', 'US', 'CA', 'AU']
 );
 
 var MatchPostStore = {
@@ -47,7 +47,6 @@ var MatchPostStore = {
       .end((error, response) => this.init(response.body.data.children));
   }
 };
-
 
 setInterval(MatchPostStore.refetch.bind(MatchPostStore), 60000);
 MatchPostStore.refetch();

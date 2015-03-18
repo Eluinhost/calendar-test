@@ -33,7 +33,8 @@ class MatchPostItemTimers extends React.Component {
   }
 
   render() {
-    var start1, start2;
+    var start1;
+    var start2;
     if (this.props.starts) {
       start1 = this.props.starts.format('MMM DD');
       start2 = this.props.starts.format('HH:mm');
@@ -127,7 +128,6 @@ class MatchPostItem extends React.Component {
   }
 }
 MatchPostItem.colors = ['black', 'blue', 'green', 'orange', 'pink', 'purple', 'red', 'teal', 'yellow'];
-
 
 class MatchPostListing extends React.Component {
   render() {

@@ -17,7 +17,11 @@ class MatchPostFactory {
   }
 
   _parseFromLink(content) {
-    var starts, title, region, address, opens;
+    var starts;
+    var title;
+    var region;
+    var address;
+    var opens;
 
     var data = this._dataLinkParser.parse(content);
 
@@ -52,7 +56,10 @@ class MatchPostFactory {
   }
 
   _parseFromPost(raw) {
-    var starts, title, region, address;
+    var starts;
+    var title;
+    var region;
+    var address;
 
     // check the title matches our expectations
     var matches = POST_TITLE_REGEX.exec(raw.title);
@@ -109,7 +116,9 @@ class MatchPostFactory {
       content: raw.selftext,
       author: raw.author,
       permalink: 'https://reddit.com' + raw.permalink,
+      // jscs:disable requireCamelCaseOrUpperCaseIdentifiers
       posted: moment(raw.created_utc, 'X')
+      // jscs:enable requireCamelCaseOrUpperCaseIdentifiers
     };
 
     var linkData = this._dataLinkParser.parse(raw.selftext);

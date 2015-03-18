@@ -20,11 +20,11 @@ class RelativeTime extends React.Component {
   }
 
   componentDidMount() {
-      this.startTimer(this.props.refresh)
+    this.startTimer(this.props.refresh)
   }
 
   componentWillUnmount() {
-      this.stopTimer();
+    this.stopTimer();
   }
 
   componentWillReceiveProps(newProps) {
