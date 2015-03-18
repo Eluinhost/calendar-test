@@ -18,7 +18,7 @@
     "watch": "webpack -d --progress --display-chunks --display-reasons --display-error-details --watch",
     "build": "webpack -p --progress --display-chunks --display-reasons --display-error-details",
     "test": "npm run-script jscs && jest",
-    "jscs": "jscs --esprima=esprima-fb --preset=airbnb ./app"
+    "jscs": "jscs ./app"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -36,6 +36,10 @@
     "style-loader": "^0.8.3",
     "url-loader": "^0.5.5",
     "webpack": "^1.6.0"
+  },
+  "jscsConfig": {
+    "esprima": "esprima-fb",
+    "preset": "airbnb"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/test-preprocessor.js",
