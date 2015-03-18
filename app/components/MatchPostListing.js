@@ -4,7 +4,7 @@ import React from 'react/addons';
 import _ from 'lodash';
 import {MatchPostStore} from '../stores';
 import {RelativeTime} from '.';
-import shallowEqual from '../services/shallowEqual';
+import {shallowEqual} from '../services';
 
 class MatchPostItemHeader extends React.Component {
   shouldComponentUpdate(newProps) {

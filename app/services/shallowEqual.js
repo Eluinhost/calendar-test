@@ -1,6 +1,6 @@
 'use strict';
 
-var _ = require('lodash');
+import _ from 'lodash';
 
 module.exports = function(a, b) {
   // if they're the same object

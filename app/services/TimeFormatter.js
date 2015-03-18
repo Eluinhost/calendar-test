@@ -1,6 +1,6 @@
 'use strict';
 
-var IntlRelativeFormat = require('intl-relativeformat');
+import IntlRelativeFormat from 'intl-relativeformat';
 
 if (!global.Intl) {
   global.Intl = require('intl'); // polyfill for `Intl`
