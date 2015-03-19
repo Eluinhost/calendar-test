@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react/addons';
-import {RelativeTime} from '..';
+import {RelativeTime, MarkdownView} from '..';
 
 class MatchPost extends React.Component {
   render() {
@@ -27,7 +27,7 @@ class MatchPost extends React.Component {
           </a>
           <div className="match-post__post">
             <div className="ui divider"></div>
-            {this.props.data.get('content')}
+            <MarkdownView markdown={this.props.data.get('content')} />
           </div>
         </div>
       </div>
