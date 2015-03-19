@@ -19,7 +19,12 @@ class MatchPost extends React.Component {
           <h2 className="match-post__title">
             <a href={this.props.data.get('permalink')} target="_blank">{this.props.data.get('title')}</a>
           </h2>
-          <a className="ui right ribbon label match-post__author">{this.props.data.get('author')}</a>
+          <a
+            href={'https://reddit.com/u/' + this.props.data.get('author')}
+            className="ui right ribbon label match-post__author"
+            target="_blank">
+            {this.props.data.get('author')}
+          </a>
           <div className="match-post__post">
             <div className="ui divider"></div>
             {this.props.data.get('content')}
@@ -27,15 +32,6 @@ class MatchPost extends React.Component {
         </div>
       </div>
     );
-
-    //return (
-    //  <div className={'ui card ' + this.state.color}>
-    //    <MatchPostItemHeader title={this.props.data.get('title')} permalink={this.props.data.get('permalink')} />
-    //    <MatchPostItemTimers opens={this.props.data.get('opens')} starts={this.props.data.get('starts')} />
-    //    <MatchPostItemServerDetails region={this.props.data.get('region')} address={this.props.data.get('address')} />
-    //    <MatchPostItemAuthor author={this.props.data.get('author')} />
-    //  </div>
-    //);
   }
 }
 
