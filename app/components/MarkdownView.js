@@ -1,14 +1,11 @@
 'use strict';
 
 import React from 'react/addons';
-import SnuOwnd from 'snuownd';
-
-var Parser = SnuOwnd.getParser();
+import {MarkdownParser} from '../parsers';
 
 class MarkdownView extends React.Component {
   render() {
-    var rendered = Parser.render(this.props.markdown);
-    return <span className="markdown" dangerouslySetInnerHTML={{__html: rendered}} />
+    return <span className="markdown" dangerouslySetInnerHTML={{__html: MarkdownParser.render(this.props.markdown)}} />
   }
 }
 MarkdownView.propTypes = {
