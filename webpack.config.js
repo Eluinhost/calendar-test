@@ -24,7 +24,7 @@ module.exports = {
       },
       {
         test: /\.sass/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader?indentedSyntax')
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader?indentedSyntax&outputStyle=compressed')
       },
       {
         test: /\.js$/,
