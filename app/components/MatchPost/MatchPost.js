@@ -1,6 +1,6 @@
 'use strict';
 
-import React from 'react';
+import React from 'react/addons';
 import {RelativeTime} from '..';
 
 class MatchPost extends React.Component {
