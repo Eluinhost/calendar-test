@@ -5,6 +5,7 @@ import _ from 'lodash';
 import {MatchPostStore} from '../stores';
 import {RelativeTime} from '.';
 import {shallowEqual} from '../services';
+import MatchPost from './MatchPost';
 
 class MatchPostItemHeader extends React.Component {
   shouldComponentUpdate(newProps) {
@@ -131,7 +132,7 @@ MatchPostItem.colors = ['black', 'blue', 'green', 'orange', 'pink', 'purple', 'r
 
 class MatchPostListing extends React.Component {
   render() {
-    return <div className="ui two doubling cards">{_.values(this.props.data).map((item, index) => <MatchPostItem key={index} data={item} />)}</div>;
+    return <ul className="match-post-timeline">{_.values(this.props.data).map((item, index) => <li key={index}><MatchPost data={item} /></li>)}</ul>;
   }
 }
 

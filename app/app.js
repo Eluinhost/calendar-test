@@ -1,6 +1,7 @@
 'use strict';
 
 import 'semantic-ui-css/semantic.min.css';
+import './app.sass';
 
 import React from 'react/addons';
 import Immutable from 'immutable';
