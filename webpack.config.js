@@ -23,6 +23,10 @@ module.exports = {
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
       },
       {
+        test: /\.sass/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader?indentedSyntax')
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader?optional=react'
