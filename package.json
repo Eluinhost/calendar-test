@@ -34,16 +34,13 @@
     "file-loader": "^0.8.1",
     "jest-cli": "^0.4.0",
     "jscs": "jscs-dev/node-jscs#d6fcbc48ab4b09bd1f966a4b9495cd6bf2f9631e",
+    "jscs-loader": "0.0.5",
     "jsx-loader": "^0.12.2",
     "sass-loader": "^0.5.0",
     "style-loader": "^0.8.3",
     "url-loader": "^0.5.5",
     "webpack": "^1.6.0",
     "webpack-dev-server": "^1.7.0"
-  },
-  "jscsConfig": {
-    "esprima": "esprima-fb",
-    "preset": "airbnb"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/test-preprocessor.js",

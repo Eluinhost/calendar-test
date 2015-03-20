@@ -49,6 +49,13 @@ module.exports = {
         test: /\.(ttf|eot)$/,
         loader: 'file-loader'
       }
+    ],
+    preLoaders: [
+      {
+        test:    /\.js$/,
+        exclude: /node_modules/,
+        loader: 'jscs-loader'
+      }
     ]
   },
   plugins: [
