@@ -35,8 +35,8 @@ var wrapCallback = function(original) {
     options.link_attributes = wrapLinkAttributes(options.link_attributes);
     // jscs:enable requireCamelCaseOrUpperCaseIdentifiers
 
-    // call the original if provided
-    if (original) original(out, link, title, content, options);
+    // call the original
+    return original(out, link, title, content, options);
   }
 };
 
