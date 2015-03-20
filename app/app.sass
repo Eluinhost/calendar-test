@@ -35,16 +35,15 @@ $red: #CC333F
       a
         color: $white
 
-
     .match-post
       &:hover
         .match-post__post
-          display: inherit
-        .match-post__author.label
-          margin-bottom: 0
+          max-height: 600px
 
       .match-post__post
-        display: none
+        max-height: 0
+        overflow-y: auto
+        transition: max-height 1s ease-in-out
 
     .match-post__time
       display: block
@@ -184,7 +183,6 @@ $red: #CC333F
  */
 .markdown
   text-align: left
-  max-width: 60em
   overflow: auto
   font-size: small
 

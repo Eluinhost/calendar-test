@@ -43,7 +43,6 @@ class MatchPost extends React.Component {
             {this.props.data.get('author')}
           </a>
           <div className="match-post__post">
-            <div className="ui divider"></div>
             <MarkdownView markdown={this.props.data.get('content')} />
           </div>
         </div>
