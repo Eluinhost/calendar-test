@@ -1,4 +1,3 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack');
 var _ = require('lodash');
 var path = require('path');
@@ -11,8 +10,7 @@ module.exports = {
     app: [
       'webpack-dev-server/client?http://localhost:8080',
       'webpack/hot/dev-server',
-      path.join(__dirname, 'app', 'app.js'),
-      path.join(__dirname, 'app', 'app.sass')
+      path.join(__dirname, 'app', 'app.js')
     ],
     vendor: vendors
   },
@@ -26,16 +24,16 @@ module.exports = {
     loaders: [
       {
         test: /\.css/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+        loader: 'style!css'
       },
       {
         test: /\.sass/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader?indentedSyntax&outputStyle=compressed')
+        loader: 'style!css!sass?indentedSyntax&outputStyle=compressed'
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader?optional=react'
+        loaders: ['react-hot', 'babel-loader?optional=react']
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
@@ -59,9 +57,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin('[name].css'),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
   ]
 };
