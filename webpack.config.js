@@ -8,13 +8,19 @@ vendors = _.without(vendors, 'semantic-ui-css');
 
 module.exports = {
   entry: {
-    app: path.join(__dirname, 'app', 'app.js'),
+    app: [
+      'webpack-dev-server/client?http://localhost:8080',
+      'webpack/hot/dev-server',
+      path.join(__dirname, 'app', 'app.js'),
+      path.join(__dirname, 'app', 'app.sass')
+    ],
     vendor: vendors
   },
   output: {
     path: path.join(__dirname, 'public', 'assets'),
     filename: '[name].js',
-    chunkFilename: '[id].js'
+    chunkFilename: '[id].js',
+    publicPath: '/assets/'
   },
   module: {
     loaders: [
@@ -46,6 +52,8 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
     new ExtractTextPlugin('[name].css'),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js')
   ]

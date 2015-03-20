@@ -19,6 +19,7 @@
     "watch": "webpack -d --progress --display-chunks --display-reasons --display-error-details --watch",
     "build": "webpack -p --progress --display-chunks --display-reasons --display-error-details",
     "test": "npm run-script jscs && jest",
+    "serve": "webpack-dev-server --content-base public/ --hot",
     "jscs": "jscs ./app"
   },
   "engines": {
@@ -37,7 +38,8 @@
     "sass-loader": "^0.5.0",
     "style-loader": "^0.8.3",
     "url-loader": "^0.5.5",
-    "webpack": "^1.6.0"
+    "webpack": "^1.6.0",
+    "webpack-dev-server": "^1.7.0"
   },
   "jscsConfig": {
     "esprima": "esprima-fb",
