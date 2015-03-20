@@ -45,6 +45,10 @@ $red: #CC333F
         overflow-y: auto
         transition: max-height 1s ease-in-out
 
+        a
+          color: mix($white, $blue)
+          font-weight: bold
+
     .match-post__time
       display: block
       width: 25%
@@ -133,6 +137,11 @@ $red: #CC333F
         &:after
           border-right-color: $blue
 
+      .match-post__post
+        a
+          color: mix($white, $red)
+          font-weight: bold
+
 @media screen and (max-width: 65.375em)
   .match-post-timeline > li .match-post__timespan:last-child
     font-size: 1.5em
@@ -185,9 +194,6 @@ $red: #CC333F
   text-align: left
   overflow: auto
   font-size: small
-
-  a
-    color: mix($white, $red)
 
   p, h1
     margin: 5px 0
