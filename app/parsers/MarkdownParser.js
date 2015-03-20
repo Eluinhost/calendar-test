@@ -1,6 +1,7 @@
 'use strict';
 
 import Snuownd from 'snuownd';
+import {dataLinkAddress} from '../config';
 
 var Parser = Snuownd.getParser();
 
@@ -28,6 +29,12 @@ var wrapCallback = function(original) {
   return function(out, link, title, content, options) {
     // make sure the object exists
     if (!options) options = {};
+
+    // don't render the link at all if it's a data link
+    if (link.s === dataLinkAddress) {
+      out = '';
+      return 1;
+    }
 
     // add our own link attributes
 

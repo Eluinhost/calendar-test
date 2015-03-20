@@ -4,9 +4,10 @@ import MatchPostFactory from './MatchPostFactory';
 import {MarkdownDataLinkParser} from '../parsers';
 import request from 'superagent';
 import moment from 'moment';
+import {dataLinkAddress} from '../config';
 
 var MatchPostGenerator = new MatchPostFactory(
-  new MarkdownDataLinkParser('/matchpost'),
+  new MarkdownDataLinkParser(dataLinkAddress),
   ['EU', 'NA', 'AF', 'AN', 'AS', 'OC', 'SA', 'US', 'CA', 'AU']
 );
 
