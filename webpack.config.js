@@ -33,7 +33,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: ['react-hot', 'babel-loader?optional=react']
+        loader: 'react-hot!babel?optional=react'
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
