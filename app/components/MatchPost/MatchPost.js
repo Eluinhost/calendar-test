@@ -38,8 +38,9 @@ class MatchPost extends React.Component {
           </h2>
           <a
             href={'https://reddit.com/u/' + this.props.data.get('author')}
-            className="ui right ribbon label match-post__author"
+            className="ui ribbon label match-post__author"
             target="_blank">
+            <i className="reddit icon" />
             {this.props.data.get('author')}
           </a>
           <div className="match-post__post">
