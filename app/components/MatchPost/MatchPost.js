@@ -27,7 +27,35 @@ class StartTime extends React.Component {
 }
 
 class MatchPost extends React.Component {
+  renderAddress() {
+    var address = this.props.data.get('address');
+
+    if (address)
+      return (
+        <div className="match-post__address">
+          <i className="cubes icon" />
+          {address}
+        </div>
+      );
+  }
+
+  renderLabel() {
+    return (
+      <a
+        href={'https://reddit.com/u/' + this.props.data.get('author')}
+        className="ui ribbon label match-post__ribbon"
+        target="_blank">
+        <div className="match-post__author">
+          <i className="reddit icon" />
+              {this.props.data.get('author')}
+        </div>
+            {this.renderAddress()}
+      </a>
+    )
+  }
+
   render() {
+
     return (
       <div className="match-post">
         <StartTime starts={this.props.data.get('starts')} />
@@ -36,13 +64,7 @@ class MatchPost extends React.Component {
           <h2 className="match-post__title">
             <a href={this.props.data.get('permalink')} target="_blank">{this.props.data.get('title')}</a>
           </h2>
-          <a
-            href={'https://reddit.com/u/' + this.props.data.get('author')}
-            className="ui ribbon label match-post__author"
-            target="_blank">
-            <i className="reddit icon" />
-            {this.props.data.get('author')}
-          </a>
+          {this.renderLabel()}
           <div className="match-post__post">
             <MarkdownView markdown={this.props.data.get('content')} />
           </div>
